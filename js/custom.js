@@ -1,0 +1,35 @@
+//$(function () {
+    
+
+//=======
+	//toggle the component with class accordion_body
+	$(".accordion_head").click(function(){
+		if ($('.accordion_body').is(':visible')) {
+			$(".accordion_body").slideUp(300);
+			$(".plusminus").text('+');
+		}
+        if( $(this).next(".accordion_body").is(':visible')){
+            $(this).next(".accordion_body").slideUp(300);
+            $(this).children(".plusminus").text('+');
+        }else {
+            $(this).next(".accordion_body").slideDown(300); 
+            $(this).children(".plusminus").text('-');
+        }
+	});
+
+$("a[href$='#demo']").click(function() {
+
+  let attr = $("#demo").attr("class");
+   if (attr=="collapse show") {
+    $("i").removeClass("fas fa-chevron-right");
+    $("i").addClass("down");
+} else {
+   $("i").removeClass("fas fa-chevron-down");
+    $("i").addClass("fas fa-chevron-up");
+  }
+
+
+});
+    //    mixitup=========
+    var mixer = mixitup('.wrap');
+//});
